@@ -1,17 +1,20 @@
 const htmlToPdf = require('html-to-pdf');
 htmlToPdf.setInputEncoding('UTF-8');
 htmlToPdf.setOutputEncoding('UTF-8');
+const bporrao = "<p>Corpo do Porrão</p>"
+const bporra = "<p>Corpo do Porra</p>"
+const bporrinha = "<p>Corpo do Porrinha</p>"
 const html = 
 	`
 		<!DOCTYPE html>
 			<html>
 				<body>
 					<h1>Porrão</h1>
-						<p>Corpo do Porrão</p>
+						${bporrao}
 					<h2>Porra</h2>
-						<p>Corpo da Porra</p>
+						${bporra}
 					<h5>Porrinha</h5>
-						<p>Corpo da porrinha</p>
+						${bporrinha}
 				</body>
 			</html>
 	`
