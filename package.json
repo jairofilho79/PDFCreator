@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "html-to-pdf": "^0.1.11"
+    "html-pdf": "^2.2.0"
   }
 }
