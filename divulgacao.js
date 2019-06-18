@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+const model = `<!DOCTYPE html>
 <html>
 	<body>
 		<style type="text/css">
@@ -55,4 +55,6 @@
             <br>
             <br>
 	</body>
-</html>
+</html>`
+
+module.exports = { model }

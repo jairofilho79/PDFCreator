@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+const model = `<!DOCTYPE html>
 <html>
 	<body>
 		<style type="text/css">
@@ -35,14 +35,14 @@
 
             <!--
                   Avaliadores:
-                  trecho1 = `${tituloPessoa} ${pessoa} participou na condição de ${condicao} da Banca de`
-                  trecho2 = `, apresentado pelo discente ${discente}`
+                  trecho1 = ${tituloPessoa} ${pessoa} participou na condição de ${condicao} da Banca de
+                  trecho2 = , apresentado pelo discente ${discente}
                   trecho3 = '.'
                   
                   Discente:
-                  trecho1 = `discente realizou a`
+                  trecho1 = discente realizou a
                   trecho2 = ''
-                  trecho3 = `, sendo o trabalho ${aprovado} com conceito ${conceito}.`
+                  trecho3 = , sendo o trabalho ${aprovado} com conceito ${conceito}.
 
             -->
             <div class="outer">
@@ -75,4 +75,6 @@
                 Diretor(a) da Faculdade de Computação
             </p>
 	</body>
-</html>
+</html>`
+
+module.exports = { model }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+const model = `<!DOCTYPE html>
 <html>
 	<body>
 		<style type="text/css">
@@ -36,7 +36,7 @@
             <!--variável que está em uppercase é porque precisa ter o toUpperCase()-->
             <div class="outer">
                   <p>
-                        Realizou-se na ${salaTCC}, do Campus Básico da Universidade Federal do Pará, situado no Bairro do Guamá, nesta cidade de Belém do Pará, a sessão de Defesa Pública do Trabalho de Conclusão de Curso intitulado '${tituloTCC}', apresentado pelo(a) discente ${DISCENTE}. A sessão foi instalada às ${horarioTCC} h pelo(a)${tituloOrientador} ${orientador}. A referida banca foi constituída pelos seguintes membros:${tituloOrientador} ${orientador} (ORIENTADOR(A)) ${,tituloCoOrientador}${coOrientador} (COORIENTADOR(A)) ${,tituloAvaliador1} ${avaliador1} (AVALIADOR(A))${tituloAvaliador2} ${avaliador2} (AVALIADOR(A)). A Banca Examinadora, após a exposição do mencionado Trabalho pelo discente, passou a arguí-lo. E nada mais havendo a tratar, o presidente deu por encerrada a Defesa do Trabalho, agradecendo a presença de todos, e para constar a legitimidade do que foi deliberado, lavrou-se a presente ata que após lida, será assinada pelos membros presentes na reunião. Belém, 13 de fevereiro de 2019.
+                        Realizou-se na ${salaTCC}, do Campus Básico da Universidade Federal do Pará, situado no Bairro do Guamá, nesta cidade de Belém do Pará, a sessão de Defesa Pública do Trabalho de Conclusão de Curso intitulado '${tituloTCC}', apresentado pelo(a) discente ${DISCENTE}. A sessão foi instalada às ${horarioTCC} h pelo(a)${tituloOrientador} ${orientador}. A referida banca foi constituída pelos seguintes membros:${tituloOrientador} ${orientador} (ORIENTADOR(A)) ${tituloCoOrientador}${coOrientador} (COORIENTADOR(A)) ${tituloAvaliador1} ${avaliador1} (AVALIADOR(A))${tituloAvaliador2} ${avaliador2} (AVALIADOR(A)). A Banca Examinadora, após a exposição do mencionado Trabalho pelo discente, passou a arguí-lo. E nada mais havendo a tratar, o presidente deu por encerrada a Defesa do Trabalho, agradecendo a presença de todos, e para constar a legitimidade do que foi deliberado, lavrou-se a presente ata que após lida, será assinada pelos membros presentes na reunião. Belém, 13 de fevereiro de 2019.
                   </p> 
             </div>
             
@@ -101,4 +101,6 @@
                   </div>
             </div>
 	</body>
-</html>
+</html>`
+
+module.exports = { model }

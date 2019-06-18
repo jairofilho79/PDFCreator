@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+const model = `<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -68,4 +68,6 @@
             </p>
         </footer>
     </body>
-</html>
+</html>`
+
+module.exports = { model }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+const model = `<!DOCTYPE html>
 <html>
 	<body>
 		<style type="text/css">
@@ -75,4 +75,6 @@
             <p class="aviso"><em>Em caso de rasura, ou quaisquer formas de deterioração deste papel, por favor, trocar na secretaria</em></p> 
             
 	</body>
-</html>
+</html>`
+
+module.exports = { model }
