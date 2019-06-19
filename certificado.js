@@ -1,4 +1,31 @@
-const model = `<!DOCTYPE html>
+module.exports = function model({
+      tituloPessoa,
+      pessoa,
+      condicao,
+      discente,
+      aprovado,
+      conceito,
+      tituloOrientador,
+      orientador,
+      tituloCoOrientador,
+      coOrientador,
+      tituloAvaliador1,
+      avaliador1,
+      tituloAvaliador2,
+      avaliador2,
+      tituloTCC,
+      diaDefesa,
+      mesDefesa,
+      anoDefesa,
+      dia,
+      mes,
+      ano,
+      diretor
+}) {
+  const trecho1 = `${tituloPessoa} ${pessoa} participou na condição de ${condicao} da Banca de`
+  const trecho2 = `, apresentado pelo discente ${discente}`
+  const trecho3 = `, sendo o trabalho ${aprovado} com conceito ${conceito}.`
+  return `<!DOCTYPE html>
 <html>
 	<body>
 		<style type="text/css">
@@ -47,7 +74,7 @@ const model = `<!DOCTYPE html>
             -->
             <div class="outer">
                   <p>
-                        Certificamos para os devidos fins que o(a) ${trecho1} Defesa Pública do Trabalho de Conclusão de Curso intitulado '${tituloTCC}'${trecho2}, no dia ${diaDefesa} de {mesDefesa} de ${anoDefesa}${trecho3}
+                        Certificamos para os devidos fins que o(a) ${trecho1} Defesa Pública do Trabalho de Conclusão de Curso intitulado '${tituloTCC}'${trecho2}, no dia ${diaDefesa} de ${mesDefesa} de ${anoDefesa}${trecho3}
                   </p> 
             </div>
             
@@ -76,5 +103,4 @@ const model = `<!DOCTYPE html>
             </p>
 	</body>
 </html>`
-
-module.exports = { model }
+}

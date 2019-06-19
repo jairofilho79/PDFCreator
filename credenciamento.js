@@ -1,4 +1,16 @@
-const model = `<!DOCTYPE html>
+module.exports = function model({
+  tituloDiretor,
+  diretor,
+  orientador,
+  CURSO,
+  nomeDosAlunos,
+  matricula,
+  dia,
+  mes,
+  ano,
+  membroConvidado
+}) {
+  return `<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -23,9 +35,9 @@ const model = `<!DOCTYPE html>
             &nbsp;De acordo com o Art. 94 do Regulamento da Graduação desta Universidade,
             solicito o credenciamento para participação de bancas de defesa de
             Trabalhos de Conclusão de Curso. Informo o convite recebido pelo(a)
-            professor(a) ${Orientador}, para compor a banca de defesa
-            do aluno concluinte do Curso de Bacharelado em ${Curso},
-            ${NomeDosAlunos}, matrícula ${matricula}}.
+            professor(a) ${orientador}, para compor a banca de defesa
+            do aluno concluinte do Curso de Bacharelado em ${CURSO},
+            ${nomeDosAlunos}, matrícula ${matricula}}.
         </p>
         <p>
            &nbsp;Nestes termos, peço deferimento.
@@ -48,7 +60,7 @@ const model = `<!DOCTYPE html>
             ____________________________________
         </p>
         <p align="center">
-            ${Orientador}
+            ${orientador}
         </p>
         <p align="center">
             (Orientador(a))
@@ -69,5 +81,4 @@ const model = `<!DOCTYPE html>
         </footer>
     </body>
 </html>`
-
-module.exports = { model }
+}

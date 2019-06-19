@@ -1,4 +1,23 @@
-const model = `<!DOCTYPE html>
+module.exports = function model({
+  CURSO,
+  DISCENTE,
+  tituloTCC,
+  tituloOrientador,
+  orientador,
+  tituloCoOrientador,
+  coOrientador,
+  tituloAvaliador1,
+  avaliador1,
+  tituloAvaliador2,
+  avaliador2,
+  diaTCC,
+  mesTCC,
+  anoTCC,
+  horarioTCC,
+  salaTCC,
+  resumo
+}) {
+  return `<!DOCTYPE html>
 <html>
 	<body>
 		<style type="text/css">
@@ -37,7 +56,7 @@ const model = `<!DOCTYPE html>
             <p align="center">${DISCENTE}</p>
 
             &nbsp;<p align="left"><strong><em>Título:</em></strong></p>
-            <p align="center"><strong>${TITULOTCC}</strong></p>
+            <p align="center"><strong>${tituloTCC}</strong></p>
 
             &nbsp;<p align="left"><strong><em>Banca:</em></strong></p>
             <p align="center">${tituloOrientador} ${orientador} (Orientador(a))</p>
@@ -56,5 +75,4 @@ const model = `<!DOCTYPE html>
             <br>
 	</body>
 </html>`
-
-module.exports = { model }
+}
