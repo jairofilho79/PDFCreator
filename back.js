@@ -51,7 +51,6 @@ function batchCreatePDF(documentModels) {
       format: 'A4',
       orientation: document.orientation
     }
-    console.log(document.doc(data).replace('\r\n', '\n'))
     pdf.create(document.doc(data), options).toStream((err, stream) => {
       stream.pipe(fs.createWriteStream(`./${document.name}`))
     })
