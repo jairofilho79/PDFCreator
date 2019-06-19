@@ -1,4 +1,19 @@
-const model = `<!DOCTYPE html>
+module.exports = function model({ 
+  CURSO,
+  DISCENTE,
+  salaTCC,
+  tituloTCC,
+  horarioTCC,
+  tituloOrientador,
+  orientador,
+  tituloAvaliador1,
+  avaliador1,
+  tituloCoOrientador,
+  coOrientador,
+  tituloAvaliador2,
+  avaliador2
+}) {
+  return `<!DOCTYPE html>
 <html>
 	<body>
 		<style type="text/css">
@@ -102,5 +117,4 @@ const model = `<!DOCTYPE html>
             </div>
 	</body>
 </html>`
-
-module.exports = { model }
+}

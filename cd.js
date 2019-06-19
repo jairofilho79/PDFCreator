@@ -1,4 +1,12 @@
-const model = `<!DOCTYPE html>
+module.exports = function model({
+  CURSO,
+  tituloTCC,
+  nomeDosAlunos,
+  orientador,
+  coOrientador,
+  anoAtual,
+}) {
+  return `<!DOCTYPE html>
 <html>
 	<body>
 		<style type="text/css">
@@ -33,26 +41,26 @@ const model = `<!DOCTYPE html>
                         <p align="center">FACULDADE DE COMPUTAÇÃO</p>
                         <p align="center">CURSO DE BACHARELADO EM ${CURSO}</p>
                         <br>
-                        <p align="center"><strong>${TituloDoTCC}</strong></p>
+                        <p align="center"><strong>${tituloTCC}</strong></p>
                         <br>
                         <br>
-                        <p align="center"><strong>${NomeDosAlunos}</strong></p>
+                        <p align="center"><strong>${nomeDosAlunos}</strong></p>
                         <br>
                         <br>
-                        <p align="center">Orientador: ${Orientador}</p>
-                        <p align="center">Co-Orientador: ${CoOrientador}</p>
+                        <p align="center">Orientador: ${orientador}</p>
+                        <p align="center">Co-Orientador: ${coOrientador}</p>
                         <br>
 
-                        <p align="center">Belém ${AnoAtual}</p>
+                        <p align="center">Belém ${anoAtual}</p>
 
                   </div>
                   <!--COSTA-->
                   <div class="cd" style="float: right;">
                         <br>
-                        <p align="center"><strong>${TituloDoTCC}</strong></p>
+                        <p align="center"><strong>${tituloTCC}</strong></p>
                         <br>
                         <br>
-                        <p align="center"><strong>${NomeDosAlunos}</strong></p>
+                        <p align="center"><strong>${nomeDosAlunos}</strong></p>
                         <br>
                         <br>
                         <br>
@@ -68,7 +76,7 @@ const model = `<!DOCTYPE html>
                         <p align="center">
                             _______________________________________
                         </p>
-                        <p align="center">${Orientador}</p>
+                        <p align="center">${orientador}</p>
                   </div>
             </div>
             <p class="aviso"><em>Deve ser entregue na secretaria da faculdade, já com a assinatura do seu Orientador.</em></p>
@@ -76,5 +84,4 @@ const model = `<!DOCTYPE html>
             
 	</body>
 </html>`
-
-module.exports = { model }
+}
