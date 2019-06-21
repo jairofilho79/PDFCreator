@@ -24,29 +24,27 @@ const
    ano = "",
    diretor = "Josivaldo Pereira dos Santos";
   
-// Create a document
 const doc = new PDFDocument;
-// Pipe its output somewhere, like to a file or HTTP response
-// See below for browser usage
+
 doc.pipe(fs.createWriteStream('certificado.pdf'));
 
-// Add an image, constrain it to a given size, and center it vertically and horizontally
+//Header
 doc.image('../img/logoFacomp.png', 100, 30, {
    align: 'left',
    valign: 'top'
 });
-
-//Header
 doc.fontSize(12)
    .text(
-      'UNIVERSIDADE FEDERAL DO PARÁ\n'+
-      'INSTITUTO DE CIÊNCIAS EXATAS E NATURAIS\n'+
-      'FACULDADE DE COMPUTAÇÃO'
+      `
+      UNIVERSIDADE FEDERAL DO PARÁ
+      INSTITUTO DE CIÊNCIAS EXATAS E NATURAIS
+      FACULDADE DE COMPUTAÇÃO
+      `
       ,80, 50,{
          align: 'center'
       });
 
-doc.image('../img/logoUFPA.png', 435, 35, {
+doc.image('../img/logoUFPA.png', 450, 30, {
    align: 'right',
    valign: 'top'
 });
@@ -116,5 +114,4 @@ doc.fontSize(12)
          align: 'center',
       });
 
-// Finalize PDF file
 doc.end();
