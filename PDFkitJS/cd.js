@@ -84,7 +84,7 @@ module.exports = function model({
   
   doc.fontSize(9)
      .text(`Declaro que este CD-ROM contém o trabalho de conclusão corrigido e 
-  finalizado conforme minha orientação.`
+finalizado conforme minha orientação.` //Manter colado desse jeito, para que não haja indentação no texto.
         ,420, 150)
   
   doc.fontSize(10)

@@ -27,33 +27,33 @@ module.exports = function model({
   const doc = new PDFDocument
   
   //Header
-  doc.image('./img/logoFacomp.png', 100, 30, {
-     align: 'left',
-     valign: 'top'
-  })
-  doc.fontSize(12)
-     .text(
-        `
-        UNIVERSIDADE FEDERAL DO PARÁ
-        INSTITUTO DE CIÊNCIAS EXATAS E NATURAIS
-        FACULDADE DE COMPUTAÇÃO
-        `
-        ,80, 50,{
-           align: 'center'
-        })
-  
-  doc.image('./img/logoUFPA.png', 450, 30, {
-     align: 'right',
-     valign: 'top'
-  })
-  //End of Header
+doc.image('./img/logoFacomp.png', 50, 30, {
+   align: 'left',
+   valign: 'top'
+});
+doc.fontSize(12)
+   .text(
+      `
+      UNIVERSIDADE FEDERAL DO PARÁ
+      INSTITUTO DE CIÊNCIAS EXATAS E NATURAIS
+      FACULDADE DE COMPUTAÇÃO
+      `
+      ,60, 40,{
+         align: 'center'
+      });
+
+doc.image('./img/logoUFPA.png', 500, 35, {
+   align: 'right',
+   valign: 'top'
+});
+//End of Header
   
   //pessoa = Pessoa que vai estar na condição de orientador, co-orientador ou avaliador.
   /*
-     Avaliadores:
+     Avaliadores e Orientador e Coorientador:
   */
 
-  // QUANDO UTILIZAR QUAL TRECHO?
+  // QUANDO UTILIZAR QUAL TRECHO? R: Utilizar o abaixo quando for gerar para Avaliador, Orientador e Coorientador e o outro para Certificar o Discente.
   const trecho1 = `${tituloPessoa} ${pessoa} participou na condição de ${condicao} da Banca de`
   const trecho2 = `, apresentado pelo discente ${discente}`
   const trecho3 = '.'

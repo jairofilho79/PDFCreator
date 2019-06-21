@@ -1,5 +1,6 @@
 const fs = require('fs')
 const Cd = require('./PDFkitJS/cd')
+const Ata = require('./PDFkitJS/ata')
 const Certificado = require('./PDFkitJS/certificado')
 const Credenciamento = require('./PDFkitJS/credenciamento')
 const Divulgacao = require('./PDFkitJS/divulgacao')
@@ -40,10 +41,12 @@ const dados = {
 }
 
 const cdStream = Cd(dados)
+const ataStream = Ata(dados)
 const certStream = Certificado(dados)
 const credStream = Credenciamento(dados)
 const divuStream = Divulgacao(dados)
-cdStream.pipe(fs.createWriteStream('cd.pdf'))
-certStream.pipe(fs.createWriteStream('cert.pdf'))
-credStream.pipe(fs.createWriteStream('cred.pdf'))
-divuStream.pipe(fs.createWriteStream('divu.pdf'))
+ataStream.pipe(fs.createWriteStream('PDFs/ata.pdf'))
+cdStream.pipe(fs.createWriteStream('PDFs/cd.pdf'))
+certStream.pipe(fs.createWriteStream('PDFs/cert.pdf'))
+credStream.pipe(fs.createWriteStream('PDFs/cred.pdf'))
+divuStream.pipe(fs.createWriteStream('PDFs/divu.pdf'))
