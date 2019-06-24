@@ -1,6 +1,4 @@
-const PDFDocument = require('pdfkit')
-  
-module.exports = function model({
+module.exports = function model(doc, {
    curso,
    tituloTCC,
    discente,
@@ -22,7 +20,6 @@ module.exports = function model({
    salaDefesa,
    resumo
 }) {
-  const doc = new PDFDocument
   
  //Header
 doc.image('./img/logoFacomp.png', 50, 30, {
@@ -139,6 +136,5 @@ doc.image('./img/logoUFPA.png', 500, 35, {
            align: 'center',
         })
   
-  doc.end()
   return doc
 }

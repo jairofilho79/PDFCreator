@@ -1,6 +1,4 @@
-const PDFDocument = require('pdfkit')
-  
-module.exports = function model({
+module.exports = function model(doc, {
   tituloTCC,
   diaDefesa,
   mesDefesa,
@@ -20,7 +18,7 @@ module.exports = function model({
   curso,
   discente
 }) {
-  const doc = new PDFDocument
+  // const doc = new PDFDocument
   
 //Header
 doc.image('./img/logoFacomp.png', 50, 30, {
@@ -113,6 +111,5 @@ doc.fontSize(10)
 AVALIADOR(A)`
     ,380, 690)
 
-  doc.end()
   return doc
 }

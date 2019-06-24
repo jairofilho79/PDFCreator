@@ -1,6 +1,4 @@
-const PDFDocument = require('pdfkit')
-
-module.exports = function model({
+module.exports = function model(doc, {
   curso,
   tituloTCC,
   nomeDosAlunos,
@@ -10,7 +8,7 @@ module.exports = function model({
   coOrientador,
   ano
 }) {
-  const doc = new PDFDocument({autoFirstPage: false})
+  // const doc = new PDFDocument({autoFirstPage: false})
   
   doc.addPage({
      layout: 'landscape'
@@ -102,6 +100,5 @@ finalizado conforme minha orientação.` //Manter colado desse jeito, para que n
   Em caso de rasura, ou quaisquer formas de deterioração deste papel, por favor, trocar na secretaria.`
         ,100, 450)
   
-  doc.end()
   return doc
 }

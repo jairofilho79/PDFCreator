@@ -1,6 +1,4 @@
-const PDFDocument = require('pdfkit')
-
-module.exports = function model({
+module.exports = function model(doc, {
    tituloDiretor,
    curso,
    nomeDosAlunos,
@@ -14,7 +12,6 @@ module.exports = function model({
    diretor
 }) {
   // Create a document
-  const doc = new PDFDocument
   // Pipe its output somewhere, like to a file or HTTP response
   // See below for browser usage
   
@@ -85,6 +82,5 @@ module.exports = function model({
         })
   
   // Finalize PDF file
-  doc.end()
   return doc
 }
