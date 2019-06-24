@@ -1,3 +1,4 @@
+const PDFDocument = require('pdfkit')
 const fs = require('fs')
 const Cd = require('./PDFkitJS/cd')
 const Ata = require('./PDFkitJS/ata')
@@ -40,13 +41,17 @@ const dados = {
   condicao: 'condicao'
 }
 
-const cdStream = Cd(dados)
-const ataStream = Ata(dados)
-const certStream = Certificado(dados)
-const credStream = Credenciamento(dados)
-const divuStream = Divulgacao(dados)
-ataStream.pipe(fs.createWriteStream('PDFs/ata.pdf'))
-cdStream.pipe(fs.createWriteStream('PDFs/cd.pdf'))
-certStream.pipe(fs.createWriteStream('PDFs/cert.pdf'))
-credStream.pipe(fs.createWriteStream('PDFs/cred.pdf'))
-divuStream.pipe(fs.createWriteStream('PDFs/divu.pdf'))
+let doc = new PDFDocument
+
+doc = Ata(doc, dados)
+// doc.addPage()
+doc = Cd(doc, dados)
+doc.addPage()
+doc = Certificado(doc, dados)
+doc.addPage()
+doc = Credenciamento(doc, dados)
+doc.addPage()
+doc = Divulgacao(doc, dados)
+doc.end()
+
+doc.pipe(fs.createWriteStream('./PDFs/unico.pdf'))
