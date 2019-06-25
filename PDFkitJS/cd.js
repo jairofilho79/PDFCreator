@@ -41,31 +41,34 @@ module.exports = function model(doc, {
   doc.font('Times-Bold')
      .fontSize(10)
      .text(`${tituloTCC}`
-        ,190, 180,{
-           align: 'left'
+        ,-300, 180,{
+           align: 'center'
         })
   
   doc.font('Times-Bold')
      .fontSize(10)
      .text(`${nomeDosAlunos}`
-        ,130, 205, {
-           align: 'left'
+        ,-300, 205, {
+           align: 'center'
         })
   
   doc.fontSize(10)
-     .text(`Orientador: ${tituloOrientador} ${orientador}`
-        ,100, 270,{
+     .text(`Orientador(a): ${tituloOrientador}(a) ${orientador}`
+        ,30, 270,{
            align: 'left'
         })
-  
-  doc.fontSize(10)
-     .text(`Co-Orientador: ${tituloCoOrientador} ${coOrientador}`
-        ,100, 290,{
+
+  if(coOrientador) {
+    doc.fontSize(10)
+     .text(`Co-Orientador(a): ${tituloCoOrientador}(a) ${coOrientador}`
+        ,30, 290,{
            align: 'left'
         })
+  }
+  
   
   doc.fontSize(10)
-     .text(`Belem, ${ano}`
+     .text(`Belém, ${ano}`
         ,-300, 330,{
            align: 'center'
         })
@@ -73,12 +76,16 @@ module.exports = function model(doc, {
   doc.font('Times-Bold')
      .fontSize(12)
      .text(`${tituloTCC}`
-        ,530, 40)
+        ,330, 40, {
+          align: 'center'
+        })
   
   doc.font('Times-Bold')
      .fontSize(10)
      .text(`${nomeDosAlunos}`
-        ,470, 80)
+        ,330, 80, {
+          align: 'center'
+        })
   
   doc.fontSize(9)
      .text(`Declaro que este CD-ROM contém o trabalho de conclusão corrigido e 
@@ -90,14 +97,14 @@ finalizado conforme minha orientação.` //Manter colado desse jeito, para que n
         ,450, 250)
   
   doc.fontSize(10)
-     .text(`${tituloOrientador} ${orientador}`
-        ,450, 270)
+     .text(`${tituloOrientador}(a) ${orientador}`
+        ,470, 270)
   
   doc.fontSize(12)
      .text(
-        `Deve ser entregue na secretaria da faculdade, já com a assinatura do seu Orientador.
+        `Deve ser entregue na secretaria da faculdade, já com a assinatura do seu Orientador(a).
   
-  Em caso de rasura, ou quaisquer formas de deterioração deste papel, por favor, trocar na secretaria.`
+Em caso de rasura, ou quaisquer formas de deterioração deste papel, por favor, trocar na secretaria.`
         ,100, 450)
   
   return doc

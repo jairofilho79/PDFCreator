@@ -24,7 +24,7 @@ module.exports = function model(doc, {
 }) {
   // const doc = new PDFDocument
   
-  //Header
+//Header
 doc.image('./img/logoFacomp.png', 50, 30, {
    align: 'left',
    valign: 'top'
@@ -52,8 +52,8 @@ doc.image('./img/logoUFPA.png', 500, 35, {
   */
 
   // QUANDO UTILIZAR QUAL TRECHO? R: Utilizar o abaixo quando for gerar para Avaliador, Orientador e Coorientador e o outro para Certificar o Discente.
-  const trecho1 = `${tituloPessoa} ${pessoa} participou na condição de ${condicao} da Banca de`
-  const trecho2 = `, apresentado pelo discente ${discente}`
+  const trecho1 = `${tituloPessoa}(a) ${pessoa} participou na condição de ${condicao} da Banca de`
+  const trecho2 = `, apresentado pelo(a) discente ${discente}`
   const trecho3 = '.'
   /* 
      Discente:
@@ -84,11 +84,11 @@ doc.image('./img/logoUFPA.png', 500, 35, {
   
   doc.fontSize(12)
      .text(
-        `${tituloOrientador} ${orientador} (Orientador(a))\n`+
-        `${tituloCoOrientador} ${coOrientador} (Co-Orientador(a))\n`+
-        `${tituloAvaliador1} ${avaliador1} (Avaliador(a))\n`+
-        `${tituloAvaliador2} ${avaliador2} (Avaliador(a))\n`+
-        `${tituloAvaliador3} ${avaliador3} (Avaliador(a))`
+        `${tituloOrientador}(a) ${orientador} (Orientador(a))
+${coOrientador ? `${tituloCoOrientador}(a) ${coOrientador} (Co-Orientador(a))`: ``}
+${tituloAvaliador1}(a) ${avaliador1} (Avaliador(a))
+${tituloAvaliador2}(a) ${avaliador2} (Avaliador(a))
+${avaliador3 ? `${tituloAvaliador3}(a) ${avaliador3} (Avaliador(a))`: ``}`
         ,150, 480,{
            align: 'left'
         })
@@ -96,7 +96,7 @@ doc.image('./img/logoUFPA.png', 500, 35, {
   
   doc.fontSize(12)
      .text(`Belém, ${dia} de ${mes} de ${ano}.`
-        ,100, 550,{
+        ,100, 560,{
            align: 'right',
         })
   
@@ -108,7 +108,7 @@ doc.image('./img/logoUFPA.png', 500, 35, {
   
   doc.fontSize(12)
      .text(`${diretor}\n
-        Diretor(a) da Faculdade de Computação`
+      Diretor(a) da Faculdade de Computação`
         ,80, 670,{
            align: 'center',
         })

@@ -11,9 +11,6 @@ module.exports = function model(doc, {
    ano,
    diretor
 }) {
-  // Create a document
-  // Pipe its output somewhere, like to a file or HTTP response
-  // See below for browser usage
   
   doc.font('Times-Bold')
      .fontSize(15)
@@ -23,13 +20,13 @@ module.exports = function model(doc, {
         })
   
   doc.fontSize(12)
-     .text(`Para o diretor(a) da Faculdade de Computação da Universidade Federal do Pará, [Prof. Dr. Josivaldo de Souza Araújo] ${tituloDiretor} ${diretor}`
+     .text(`Para o diretor(a) da Faculdade de Computação da Universidade Federal do Pará, ${tituloDiretor}(a) ${diretor}`
         ,50, 100,{
            align: 'justify',
         })
   
   doc.fontSize(12)
-     .text(`De acordo com o Art. 94 do Regulamento da Graduação desta Universidade, solicito o credenciamento para participação de bancas de defesa de Trabalhos de Conclusão de Curso. Informo o convite recebido pelo(a) professor(a) ${tituloOrientador} ${orientador}, para compor a banca de defesa do aluno concluinte do Curso de Bacharelado em ${curso}, ${nomeDosAlunos}, matrícula ${matricula}}.`
+     .text(`De acordo com o Art. 94 do Regulamento da Graduação desta Universidade, solicito o credenciamento para participação de bancas de defesa de Trabalhos de Conclusão de Curso. Informo o convite recebido pelo(a) professor(a) ${tituloOrientador}(a) ${orientador}, para compor a banca de defesa do aluno concluinte do Curso de Bacharelado em ${curso}, ${nomeDosAlunos}, matrícula ${matricula}.`
         ,50, 140,{
            align: 'justify',
         })
@@ -54,7 +51,7 @@ module.exports = function model(doc, {
   
   doc.fontSize(12)
      .text(`${membroConvidado}\n
-        (Membro convidado)`
+      (Membro convidado)`
         ,70, 320,{
            align: 'center',
         })
@@ -66,8 +63,8 @@ module.exports = function model(doc, {
         })
   
   doc.fontSize(12)
-     .text(`${tituloOrientador} ${orientador}\n
-        (Orientador(a))`
+     .text(`${tituloOrientador}(a) ${orientador}\n
+      (Orientador(a))`
         ,70, 420,{
            align: 'center',
         })
@@ -81,6 +78,5 @@ module.exports = function model(doc, {
            align: 'justify',
         })
   
-  // Finalize PDF file
   return doc
 }
