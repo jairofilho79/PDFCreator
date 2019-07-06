@@ -5,6 +5,8 @@ const Ata = require('./PDFkitJS/ata')
 const Certificado = require('./PDFkitJS/certificado')
 const Credenciamento = require('./PDFkitJS/credenciamento')
 const Divulgacao = require('./PDFkitJS/divulgacao')
+const ListaFrequencia = require('./PDFkitJS/listaFrequencia')
+const CertificadoConclusao = require('./PDFkitJS/certificadoConclusao')
 
 const dados = {
   curso: 'curso',
@@ -14,7 +16,6 @@ const dados = {
   orientador: 'orientador',
   tituloCoOrientador: 'titulocoorientador',
   coOrientador: 'coorientador',
-  ano: 'ano',
   diaDefesa: 'diadefesa',
   mesDefesa: 'mesdefesa',
   anoDefesa: 'anodefesa',
@@ -41,8 +42,10 @@ const dados = {
   condicao: 'condicao'
 }
 
-let doc = new PDFDocument
+let doc = new PDFDocument( {autoFirstPage: false} )
 
+doc = CertificadoConclusao(doc, dados)
+doc.addPage()
 doc = Ata(doc, dados)
 // doc.addPage()
 doc = Cd(doc, dados)
@@ -52,6 +55,8 @@ doc.addPage()
 doc = Credenciamento(doc, dados)
 doc.addPage()
 doc = Divulgacao(doc, dados)
+doc.addPage()
+doc = ListaFrequencia(doc, dados)
 doc.end()
 
 doc.pipe(fs.createWriteStream('./PDFs/unico.pdf'))
